@@ -16,6 +16,7 @@ def cors_options_view(context, request):
     response = request.response
     if 'Access-Control-Request-Headers' in request.headers:
         response.headers['Access-Control-Allow-Methods'] = ', '.join({
+            'PATCH',
             'POST',
             'PUT',
             'DELETE',
