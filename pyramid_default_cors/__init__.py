@@ -9,6 +9,7 @@ def add_cors_to_response(event):
     response = event.response
     if 'Origin' in request.headers:
         response.headers['Access-Control-Allow-Origin'] = request.headers['Origin']
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
 
 
 def cors_options_view(context, request):
